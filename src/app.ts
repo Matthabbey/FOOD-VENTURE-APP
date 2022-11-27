@@ -6,6 +6,8 @@ import indexRouter from "./routes/index";
 import adminRouter from "./routes/admin";
 import vendorRouter from "./routes/vendor";
 import { db } from "./config";
+import dotenv from 'dotenv'
+dotenv.config() // You should have your dotenv file in where you create your server, it can either be in bin or app
 
 //Sequelize connection to dataBase
 db.sync()

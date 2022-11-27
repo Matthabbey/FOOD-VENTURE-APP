@@ -11,6 +11,7 @@ export interface FoodAttributes {
   price: string;
   rating: number;
   vendorID: string;
+  image: string
 }
 
 export class FoodInstance extends Model<FoodAttributes> {}
@@ -40,7 +41,7 @@ FoodInstance.init({
     },
     readyType: {
       type: DataTypes.NUMBER,
-      allowNull: false,
+      allowNull: true,
     },
     price: {
       type: DataTypes.STRING,
@@ -55,6 +56,10 @@ FoodInstance.init({
       type: DataTypes.UUIDV4,
       allowNull: true,
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
   },
   {
     sequelize: db,

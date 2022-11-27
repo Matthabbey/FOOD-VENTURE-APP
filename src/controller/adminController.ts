@@ -184,7 +184,7 @@ export const createVendor = async (req: JwtPayload, res: Response) => {
   try {
     const id = req.user.id;
     // console.log(id)
-    const { name, ownerName, pincode, phone, address, email, password } = req.body;
+    const { name, restaurantName, pincode, phone, address, email, password } = req.body;
     const validateResult = vendorSchema.validate(req.body, option);
     if (validateResult.error) {
       return res.status(400).json({
@@ -225,7 +225,7 @@ export const createVendor = async (req: JwtPayload, res: Response) => {
           phone,
           name,
           email,
-          ownerName,
+          restaurantName,
           pincode,
           address,
           password: vendorPassword,
@@ -233,6 +233,7 @@ export const createVendor = async (req: JwtPayload, res: Response) => {
           role: "vendor",
           rating: 0,
           serviceAvailable: false,
+          coverImage: ''
         });
         return res.status(201).json({
           message: "Vendor is created successfully",

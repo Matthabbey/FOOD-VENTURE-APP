@@ -58,10 +58,10 @@ export const validatePassword = async (
 };
 
 export const updateSchema = Joi.object().keys({
-  firstName: Joi.string().required(),
-  lastName: Joi.string().required(),
-  address: Joi.string().required(),
-  phone: Joi.string().required(),
+  firstName: Joi.string(),
+  lastName: Joi.string(),
+  address: Joi.string(),
+  phone: Joi.string(),
 });
 
 export const adminSchema = Joi.object().keys({
@@ -78,7 +78,13 @@ export const vendorSchema = Joi.object().keys({
   email: Joi.string().email().required(),
   pincode: Joi.string().required(),
   password: Joi.string().regex(/[a-z0-9]{3,30}/),
-  ownerName: Joi.string().required(),
+  restaurantName: Joi.string().required(),
   address: Joi.string().required(),
   phone: Joi.string().required(),
+});
+export const updateVendorSchema = Joi.object().keys({
+  name: Joi.string(),
+  address: Joi.string(),
+  coverImage: Joi.string(),
+  phone: Joi.string(),
 });
