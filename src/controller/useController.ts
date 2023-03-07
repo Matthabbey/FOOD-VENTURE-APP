@@ -17,7 +17,6 @@ import {
 import { UserAttributes, UserInstance } from "../models/userModel";
 import { v4 as uuidv4 } from "uuid";
 import { FromAdminMail, userSubject } from "../config/index";
-import bcrypt from "bcrypt";
 import { JwtPayload } from "jsonwebtoken";
 
 export const Register = async (req: Request, res: Response) => {
