@@ -7,6 +7,8 @@
     "start": "nodemon dist/app.js",
     "compile": "tsc -w"
   },
+  "type": "module",
+
   "dependencies": {
     "@types/cookie-parser": "^1.4.3",
     "@types/dotenv": "^8.2.0",
