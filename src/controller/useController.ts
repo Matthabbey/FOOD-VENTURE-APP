@@ -60,7 +60,7 @@ export const Register = async (req: Request, res: Response) => {
       });
 
       //On resquesting OTP
-      await onRequestOTP(otp, phone);
+      // await onRequestOTP(otp, phone);
 
       //Send Email
       const html = emailHtml(otp);
@@ -92,7 +92,7 @@ export const Register = async (req: Request, res: Response) => {
     //console.log(userPassword)
   } catch (error) {
     res.status(500).json({
-      Error: "Internal server Error",
+      Error: `Internal server ${error}`,
       route: "/user/signup",
     });
     console.log(error);

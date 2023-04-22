@@ -49,7 +49,7 @@ const Register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 role: "user",
             });
             //On resquesting OTP
-            yield (0, utils_1.onRequestOTP)(otp, phone);
+            // await onRequestOTP(otp, phone);
             //Send Email
             const html = (0, utils_1.emailHtml)(otp);
             yield (0, utils_1.mailSent)(index_1.FromAdminMail, email, index_1.userSubject, html);
@@ -76,7 +76,7 @@ const Register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (error) {
         res.status(500).json({
-            Error: "Internal server Error",
+            Error: `Internal server ${error}`,
             route: "/user/signup",
         });
         console.log(error);

@@ -38,6 +38,7 @@ export const AdminRegister = async (req: JwtPayload, res: Response) => {
     const Admin = (await UserInstance.findOne({
       where: { id: id },
     })) as unknown as UserAttributes;
+    
     if (Admin.email === email) {
       return res.status(400).json({
         message: "Email Already Exit",
